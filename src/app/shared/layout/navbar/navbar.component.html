@@ -1,4 +1,4 @@
-<nav class="nav">
+<nav class="nav" [ngClass]="navListClass">
   <button
     class="nav__toggle"
     [ngClass]="navToggleClass"
@@ -6,7 +6,14 @@
   >
     <span class="nav__toggle-btn"></span>
   </button>
-  <ul class="nav__list" [ngClass]="navListClass">
+  <ul class="nav__list">
+    <li
+      class="nav__item nav__item--home"
+      routerLinkActive="nav__item--active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a [routerLink]="['']">Home</a>
+    </li>
     <li class="nav__item" routerLinkActive="nav__item--active">
       <a [routerLink]="['qrcode-demo', 'angularx-qrcode']">angularx-qrcode</a>
     </li>

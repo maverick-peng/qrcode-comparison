@@ -10,8 +10,7 @@ export class NavbarComponent {
   navToggleClass: string = '';
 
   onNavBtnClick() {
-    this.navListClass =
-      this.navListClass === 'nav__list--show' ? '' : 'nav__list--show';
+    this.navListClass = this.navListClass === 'nav--show' ? '' : 'nav--show';
     this.navToggleClass =
       this.navToggleClass === 'nav__toggle--close' ? '' : 'nav__toggle--close';
   }
