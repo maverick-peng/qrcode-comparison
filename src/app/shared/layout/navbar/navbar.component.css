@@ -1,0 +1,103 @@
+nav {
+  min-width: 200px;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.nav__list {
+  background-color: #40ac7f;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding-top: 40px;
+  transform: translateX(-100%);
+  transition: 0.5s ease-in-out;
+}
+.nav__list--show {
+  transform: translateX(0);
+  transition: 0.5s ease-in-out;
+}
+.nav__item {
+  padding: 3px 5px;
+}
+.nav__item a {
+  text-decoration: none;
+  color: #444444;
+}
+.nav__item--active {
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+}
+.nav__item--active a {
+  color: #ffffff;
+}
+
+.nav__toggle {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  cursor: pointer;
+  z-index: 2;
+  transition: 0.5s ease-in-out;
+}
+.nav__toggle:hover .nav__toggle-btn {
+  transform: translateX(2px);
+  transition: 0.2s ease-in-out;
+}
+
+.nav__toggle-btn {
+  display: inline-block;
+  border-top: 2px solid #545454;
+  width: 20px;
+  line-height: 10px;
+  vertical-align: middle;
+  position: relative;
+  transition: 0.5s ease-in-out;
+}
+.nav__toggle-btn::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: #545454;
+  top: 4px;
+  left: 0px;
+  position: absolute;
+  transition: 0.5s ease-in-out;
+}
+.nav__toggle-btn::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: #545454;
+  top: -8px;
+  left: 0px;
+  position: absolute;
+  transition: 0.5s ease-in-out;
+}
+.nav__toggle--close {
+  position: absolute;
+  top: 20px;
+  left: 80%;
+  transition: 0.5s ease-in-out;
+}
+.nav__toggle--close .nav__toggle-btn {
+  border: transparent;
+  transition: 0.5s ease-in-out;
+}
+.nav__toggle--close .nav__toggle-btn::before {
+  top: -2px;
+  transform: rotate(45deg);
+  transition: 0.5s ease-in-out;
+}
+.nav__toggle--close .nav__toggle-btn::after {
+  top: -2px;
+  transform: rotate(-45deg);
+  transition: 0.5s ease-in-out;
+}

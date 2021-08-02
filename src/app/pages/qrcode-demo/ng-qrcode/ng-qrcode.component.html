@@ -1,0 +1,19 @@
+<div class="center">
+  <h2>ng-qrcode</h2>
+  <hr />
+  <app-qrcode-control
+    [errorLevels]="['L', 'M', 'Q', 'H']"
+    [hasSizeValue]="true"
+    [hasCenterImg]="true"
+    (generateQRCode)="generateQRCode($event)"
+  ></app-qrcode-control>
+  <div class="qr-container" *ngIf="showQRCode">
+    <qr-code
+      [value]="qrCodeParameter.value"
+      [size]="qrCodeParameter.size"
+      [errorCorrectionLevel]="qrCodeParameter.errorCorrectionLevel"
+      [centerImageSrc]="qrCodeParameter.centerImageSrc"
+      [centerImageSize]="qrCodeParameter.centerImageSize"
+    ></qr-code>
+  </div>
+</div>

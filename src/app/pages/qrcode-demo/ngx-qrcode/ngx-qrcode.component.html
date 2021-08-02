@@ -1,0 +1,19 @@
+<div class="center">
+  <h2>ngx-qrcode</h2>
+  <hr />
+  <app-qrcode-control
+    [errorLevels]="['L', 'M', 'Q', 'H']"
+    [imgTypes]="['canvas', 'img', 'url']"
+    [cssClasses]="['qr--s', 'qr--m', 'qr--l']"
+    (generateQRCode)="generateQRCode($event)"
+  ></app-qrcode-control>
+  <div class="qr-container" *ngIf="showQRCode">
+    <ngx-qrcode
+      [elementType]="qrCodeParameter.elementType"
+      [value]="qrCodeParameter.value"
+      [cssClass]="qrCodeParameter.cssClass"
+      [errorCorrectionLevel]="qrCodeParameter.errorCorrectionLevel"
+    >
+    </ngx-qrcode>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  width: 100vw;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+.qr--s img {
+  width: 128px;
+}
+.qr--m img {
+  width: 258px;
+}
+.qr--l img {
+  width: 512px;
+}
+.qr--s canvas {
+  width: 128px !important;
+  height: auto !important;
+}
+.qr--m canvas {
+  width: 256px !important;
+  height: auto !important;
+}
+.qr--l canvas {
+  width: 512px !important;
+  height: auto !important;
+}

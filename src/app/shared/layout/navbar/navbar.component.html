@@ -1,0 +1,20 @@
+<nav class="nav">
+  <button
+    class="nav__toggle"
+    [ngClass]="navToggleClass"
+    (click)="onNavBtnClick()"
+  >
+    <span class="nav__toggle-btn"></span>
+  </button>
+  <ul class="nav__list" [ngClass]="navListClass">
+    <li class="nav__item" routerLinkActive="nav__item--active">
+      <a [routerLink]="['qrcode-demo', 'angularx-qrcode']">angularx-qrcode</a>
+    </li>
+    <li class="nav__item" routerLinkActive="nav__item--active">
+      <a [routerLink]="['qrcode-demo', 'ng-qrcode']">ng-qrcode</a>
+    </li>
+    <li class="nav__item" routerLinkActive="nav__item--active">
+      <a [routerLink]="['qrcode-demo', 'ngx-qrcode']">ngx-qrcode</a>
+    </li>
+  </ul>
+</nav>

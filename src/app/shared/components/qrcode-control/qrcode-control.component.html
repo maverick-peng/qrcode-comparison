@@ -1,0 +1,136 @@
+<div class="panel">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <!-- qrcode data value -->
+    <div class="form__group">
+      <label for="dataValue" class="form__label">值</label>
+      <input
+        class="form__input form__input--text"
+        name="dataValue"
+        type="text"
+        ngModel
+        required
+      />
+    </div>
+
+    <!-- qrcode size -->
+    <div *ngIf="hasSizeValue" class="form__group">
+      <label for="size" class="form__label">尺寸</label>
+      <input
+        class="form__input form__input--text"
+        name="size"
+        type="number"
+        ngModel
+        required
+      />
+    </div>
+
+    <!-- qrcode border space -->
+    <div *ngIf="hasBorderSpace" class="form__group">
+      <label for="borderSpace" class="form__label">邊緣留白</label>
+      <input
+        class="form__input form__input--text"
+        name="borderSpace"
+        type="number"
+        ngModel
+        required
+      />
+    </div>
+
+    <!-- center img src -->
+    <div *ngIf="hasCenterImg" class="form__group">
+      <label for="centerImg" class="form__label">中央圖片連結</label>
+      <input
+        class="form__input form__input--text"
+        name="centerImg"
+        type="text"
+        ngModel
+        required
+      />
+    </div>
+
+    <!-- center img size -->
+    <div *ngIf="hasCenterImg" class="form__group">
+      <label for="centerImg" class="form__label">中央圖片大小</label>
+      <input
+        class="form__input form__input--text"
+        name="centerImgSize"
+        type="text"
+        ngModel
+        required
+      />
+    </div>
+
+    <!-- different qrcode types -->
+    <div *ngIf="imgTypes.length > 0" class="form__group">
+      <label for="imgType" class="form__label">QRCode類型</label>
+      <select
+        class="form__input form__input--select"
+        name="imgType"
+        ngModel
+        required
+      >
+        <option *ngFor="let imgType of imgTypes" [value]="imgType">
+          {{ imgType }}
+        </option>
+      </select>
+    </div>
+
+    <!-- different error levels -->
+    <div *ngIf="errorLevels.length > 0" class="form__group">
+      <label for="errorLevel" class="form__label">容錯程度</label>
+      <select
+        class="form__input form__input--select"
+        name="errorLevel"
+        ngModel
+        required
+      >
+        <option *ngFor="let errorLevel of errorLevels" [value]="errorLevel">
+          {{ errorLevel }}
+        </option>
+      </select>
+    </div>
+
+    <!-- custom css class -->
+    <div *ngIf="cssClasses.length > 0" class="form__group">
+      <span>CSS Class</span>
+      <label [for]="cssClass" *ngFor="let cssClass of cssClasses">
+        <input
+          class="form__input form__input--radio"
+          type="radio"
+          name="className"
+          [value]="cssClass"
+          [id]="cssClass"
+          ngModel
+          required
+        />{{ cssClass }}
+      </label>
+    </div>
+
+    <!-- qrcode pixel color -->
+    <div class="form__group" *ngIf="canChangeColor">
+      <label for="colorDark" class="form__label">深色色號</label>
+      <input
+        class="form__input form__input--text"
+        name="colorDark"
+        type="text"
+        ngModel
+        required
+      />
+    </div>
+
+    <div class="form__group" *ngIf="canChangeColor">
+      <label for="colorLight" class="form__label">淺色色號</label>
+      <input
+        class="form__input form__input--text"
+        name="colorLight"
+        type="text"
+        ngModel
+        required
+      />
+    </div>
+
+    <div class="form__btn-group">
+      <button class="form__btn" type="submit">產生</button>
+    </div>
+  </form>
+</div>
